@@ -34,7 +34,7 @@ switch(liriCommand) {
         break;
     }
 };
-
+// BandsInTown API
 function getbands(artistSearch){
 
     var artistSearch = userInput;
@@ -54,3 +54,5 @@ function getbands(artistSearch){
 
         });
 };
+
+
