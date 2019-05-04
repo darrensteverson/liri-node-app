@@ -35,7 +35,7 @@ switch(liriCommand) {
     }
 };
 // BandsInTown API
-function getbands(artistSearch){
+function getBands(artistSearch){
 
     var artistSearch = userInput;
     var bandURL =  "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
@@ -54,5 +54,27 @@ function getbands(artistSearch){
 
         });
 };
+
+// Spotify API
+function getSpotify () {
+
+     if(songSearch = NULL){
+        songSearch = "The Sign";
+     } 
+};
+    spotify.search({ type: 'track', query: songSearch }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+
+        console.log("Artist: " + data.tracks.items[0].album.artists[0].name + "\n");
+        console.log("Song: " + data.tracks.items[0].name + "\n");
+        console.log("Album: " + data.tracks.items[0].album.name + "\n");
+        console.log("_____________________________________________" + "\n");
+
+        fs.appendFile("log.txt", getbands, function (err) {
+            if (err) throw err;
+        });
+      });
 
 
